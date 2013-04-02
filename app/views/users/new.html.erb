@@ -1,4 +1,25 @@
 <% provide(:title, 'Skapa konto') %>
 
 <h1>Skapa konto</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+
+<div class="row">
+	<div class="span6 offset3">
+		<%= form_for(@user) do |f| %>
+			<%= render 'shared/error_messages' %>
+
+			<%= f.label :name, "Namn" %>
+			<%= f.text_field :name %>
+
+			<%= f.label :email, "E-post" %>
+			<%= f.text_field :email %>
+
+			<%= f.label :password, "Lösenord" %>
+			<%= f.password_field :password %>
+
+			<%= f.label :password_confirmation, "Bekräfta lösenord" %>
+			<%= f.password_field :password_confirmation %>
+
+			<%= f.submit "Skapa mitt konto", class: "btn btn-large btn-primary" %>
+		<% end %>
+	</div>	
+</div>
